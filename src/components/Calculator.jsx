@@ -39,7 +39,7 @@ class Calculator extends Component {
     }
 
     handleClick(e) {
-        let btn = e.target.value
+        let btn = e.target.innerHTML
         switch(btn) {
             case "=":
                 this.calculate()
@@ -85,7 +85,7 @@ class KeyPad extends Component {
                 <button id="clear" className="keypad"
                 onClick={this.props.handleClick}>C</button>
                 <div id="keyPads-block">
-                {keyPads.reverse().map(obj => (
+                {keyPads.map(obj => (
                     <button id={obj.name} key={obj.name} className="keypad" 
                     onClick={this.props.handleClick}>{obj.val}</button>
                 ))}
@@ -112,6 +112,6 @@ class KeyPad extends Component {
     { name: "eight", val: 8 },
     { name: "nine", val: 9 },
     { name: "divide", val: "/" },
-]
+].reverse()
 
 export default Calculator
