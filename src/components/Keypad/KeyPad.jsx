@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './KeyPad.css'
 
 class KeyPad extends Component {
     constructor(props) {
@@ -8,16 +9,35 @@ class KeyPad extends Component {
     }
 
     handleClick(e) {
-        this.props.calculate(e.target.innerHTML)
+        let key = e.target.innerHTML
+
+        switch(key) {
+            case 'C':
+                this.props.clear()
+                break
+            case 'CE':
+                this.props.delete()
+                break
+            case '=':
+                this.props.evaluate()
+                break
+            default:
+                this.props.calculate(key)
+                break
+        }
     }
 
     render() {
         return (
-            <div id="top-keyPad-block">
-                <button id="clear" className="keypad"
-                onClick={this.handleClick}>C</button>
-                <div id="keyPads-block">
-                {keyPads.map(obj => (
+            <div id="keypad-block">
+                <div id="top-keypad-block">                    
+                    <button id="clear" className="keypad"
+                    onClick={this.handleClick}>C</button>
+                    <button id="backspace" className="keypad"
+                    onClick={this.handleClick}>CE</button>
+                </div>
+                <div id="bottom-keypad-block">
+                {keypadButtons.map(obj => (
                     <button id={obj.name} key={obj.name} className="keypad" 
                     onClick={this.handleClick}>{obj.val}</button>
                 ))}
@@ -27,7 +47,7 @@ class KeyPad extends Component {
     }
 }
   
-  const keyPads = [
+  const keypadButtons = [
     { name: "decimal", val: "." },
     { name: "zero", val: 0 },
     { name: "equals", val: "=" },

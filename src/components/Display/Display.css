@@ -1,0 +1,15 @@
+#display {
+    background: whitesmoke;
+    border-radius: 5%;
+    min-width: 30vw;
+    height: 10vh;
+    margin-bottom: 5px;
+    display: grid;
+    justify-content: flex-end;
+    padding: 5px;
+}
+  
+#expression {
+    font-size: .7rem;
+    align-items: flex-start;
+}

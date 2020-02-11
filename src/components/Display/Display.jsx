@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Display.css'
 
 class Result extends Component {
     render() {
@@ -6,9 +7,8 @@ class Result extends Component {
             <div id="display">
                 <div>
                     <span id="expression">{this.props.expression}</span>
-                </div>
-                <div>
-                    <p id="total">{this.props.total}</p>
+                    <br/>
+                    <span id="total">{this.props.total}</span>
                 </div>
             </div>
         )

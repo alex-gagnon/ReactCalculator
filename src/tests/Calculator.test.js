@@ -1,4 +1,5 @@
 import calculate from '../utils/calculate.js'
+
 describe('Calculate', () => {
   let expression;
   it ('evaluates the expression correctly', () => {
